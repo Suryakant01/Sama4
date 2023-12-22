@@ -1,7 +1,8 @@
 function getNews() {
   return new Promise((resolve, reject) => {
+    let category = ``;
     let url =
-      "https://newsapi.org/v2/top-headlines?country=in&apiKey=1f593e78a367446fb35babbbfcfd1861";
+      `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=1f593e78a367446fb35babbbfcfd1861`;
     fetch(url)
       .then((response) => {
         return response.json();
@@ -40,7 +41,7 @@ async function showNews() {
       let imgSelected = document.getElementsByClassName("img1")[i];
       let desSelected = document.getElementsByClassName("descrp")[i];
       let buttonSelected = document.getElementsByClassName("article-url")[i];
-
+      
       textSelected.innerHTML = articles[i].title;
       imgSelected.setAttribute("src", articles[i].imageUrl);
       desSelected.innerHTML = articles[i].description;
@@ -51,15 +52,16 @@ async function showNews() {
   }
 }
 
-
 showNews();
-// for (let i = 0; i < 6; i++) {
-//   // let textSelected = document.getElementsByClassName("title1")[i];
-//   //     console.log(textSelected);
-// }
+// document.getElementsByClassName("submitButton")[0].addEventListener("click", function() {
 
+//   document.getElementsById("Form").addEventListener("submit", function() {
+//       let SearchInput = document.getElementsById("searchBar")[0];
+//       console.log(SearchInput.value)
+//   });
+// });
 
-
+//another method to make articles object 
         // const articles = data.articles.map(article => ({
         //   title: article.title,
         //   imageUrl: article.urlToImage,
@@ -67,8 +69,8 @@ showNews();
         //   url: article.url
         // }));
 
-//         resolve(articles);
-//       })
+// resolve(articles);
+// })
 
 
 
