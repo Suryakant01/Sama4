@@ -50,8 +50,7 @@ async function showNews() {
   } catch (error) {
     console.error(error);
   }
-}
-
+} 
 showNews();
 // document.getElementsByClassName("submitButton")[0].addEventListener("click", function() {
 
