@@ -13,9 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build and Deploy to GitHub Pages
+      - name: Build your site here
+        # Add the build step for your static site generator or build process
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages  # Deployment branch, change if needed
-          publish_dir: ./  # Directory to deploy, change if needed
+          publish_branch: gh-pages
+          publish_dir: ./  # Change to your actual build directory if needed
+          allow_empty_commit: true
+          exclude_assets: ""  # Remove exclusions if not needed
