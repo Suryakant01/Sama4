@@ -12,24 +12,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+
+      - name: Build and Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          node-version: '14'  # Change this to your Node.js version if needed
-
-      - name: Install Dependencies
-        run: npm install  # Replace with your package manager command if using something other than npm
-
-      - name: Build
-        run: npm run build  # Replace with your build command
-
-      - name: Deploy to GitHub Pages
-        run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git checkout gh-pages  # Change 'gh-pages' to your deployment branch
-          cp -r path/to/your/build/* .
-          git add .
-          git commit -m "Deploy website"
-          git push origin gh-pages  # Change 'gh-pages' to your deployment branch
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages  # Deployment branch, change if needed
+          publish_dir: ./  # Directory to deploy, change if needed
