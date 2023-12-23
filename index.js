@@ -2,7 +2,7 @@ function getNews() {
   return new Promise((resolve, reject) => {
     let category = ``;
     let url =
-      `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=1f593e78a367446fb35babbbfcfd1861`;
+      `https://gnews.io/api/v4/search?q=example&lang=en&country=in&max=10&apikey=614239a8f6f25d743272fb017e8d0ec3`;
     fetch(url)
       .then((response) => {
         return response.json();
@@ -16,7 +16,7 @@ function getNews() {
           const article = dataArticles[i];
           const transformedArticle = {
             title: article.title,
-            imageUrl: article.urlToImage,
+            imageUrl: article.image,
             description: article.description,
             url: article.url
           };
