@@ -1,9 +1,9 @@
-name: Deploy Website on Pull Request
+name: Deploy to GitHub Pages
 
 on:
-  pull_request:
+  push:
     branches:
-      - main  # Adjust branch name if necessary
+      - main  # Change this to your main branch name
 
 jobs:
   deploy:
@@ -12,17 +12,24 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Change this to your Node.js version if needed
 
-      - name: Deploy Website
+      - name: Install Dependencies
+        run: npm install  # Replace with your package manager command if using something other than npm
+
+      - name: Build
+        run: npm run build  # Replace with your build command
+
+      - name: Deploy to GitHub Pages
         run: |
-          # Replace these commands with your deployment process
-          # For example, deploying to a hosting service like Netlify, GitHub Pages, etc.
-          # Ensure you have appropriate deployment commands here
-
-          # Example: Deploying to GitHub Pages
-          npm install # If needed
-          npm run build # If using a build tool
-          git push origin main:gh-pages --force # Adjust branch names if needed
-
-      # Add more steps as necessary for testing, linting, etc.
-
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git checkout gh-pages  # Change 'gh-pages' to your deployment branch
+          cp -r path/to/your/build/* .
+          git add .
+          git commit -m "Deploy website"
+          git push origin gh-pages  # Change 'gh-pages' to your deployment branch
