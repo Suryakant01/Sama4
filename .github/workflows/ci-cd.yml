@@ -1,1 +1,28 @@
+name: Deploy Website on Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main  # Adjust branch name if necessary
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy Website
+        run: |
+          # Replace these commands with your deployment process
+          # For example, deploying to a hosting service like Netlify, GitHub Pages, etc.
+          # Ensure you have appropriate deployment commands here
+
+          # Example: Deploying to GitHub Pages
+          npm install # If needed
+          npm run build # If using a build tool
+          git push origin main:gh-pages --force # Adjust branch names if needed
+
+      # Add more steps as necessary for testing, linting, etc.
 
