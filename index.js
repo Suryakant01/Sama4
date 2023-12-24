@@ -52,12 +52,14 @@ async function showNews() {
   }
 } 
 showNews();
+//vikas 
+
 // document.getElementsByClassName("submitButton")[0].addEventListener("click", function() {
 
-//   document.getElementsById("Form").addEventListener("submit", function() {
-//       let SearchInput = document.getElementsById("searchBar")[0];
-//       console.log(SearchInput.value)
-//   });
+  document.getElementById("Form").addEventListener("submit", function() {
+      let SearchInput = document.getElementById("searchBar");
+      console.log(SearchInput.value)
+  });
 // });
 
 //another method to make articles object 
