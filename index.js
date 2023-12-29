@@ -2,7 +2,7 @@ function getNews() {
   return new Promise((resolve, reject) => {
     let category = ``;
     let url =
-      `https://gnews.io/api/v4/search?q=example&lang=en&country=in&max=10&apikey=614239a8f6f25d743272fb017e8d0ec3`;
+      `https://gnews.io/api/v4/search?q=trending&lang=en&country=in&max=10&apikey=614239a8f6f25d743272fb017e8d0ec3`;
     fetch(url)
       .then((response) => {
         return response.json();
@@ -52,11 +52,15 @@ async function showNews() {
   }
 } 
 showNews();
+//vikas 
+
+// document.getElementsByClassName("submitButton")[0].addEventListener("click", function() {
 
   document.getElementById("Form").addEventListener("submit", function() {
       let SearchInput = document.getElementById("searchBar");
       console.log(SearchInput.value)
   });
+// });
 
 //another method to make articles object 
         // const articles = data.articles.map(article => ({
@@ -67,7 +71,7 @@ showNews();
         // }));
 
 // resolve(articles);
-
+// })
 
 
 
