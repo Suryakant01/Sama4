@@ -52,15 +52,11 @@ async function showNews() {
   }
 } 
 showNews();
-//vikas 
-
-// document.getElementsByClassName("submitButton")[0].addEventListener("click", function() {
 
   document.getElementById("Form").addEventListener("submit", function() {
       let SearchInput = document.getElementById("searchBar");
       console.log(SearchInput.value)
   });
-// });
 
 //another method to make articles object 
         // const articles = data.articles.map(article => ({
@@ -71,7 +67,7 @@ showNews();
         // }));
 
 // resolve(articles);
-// })
+
 
 
 
