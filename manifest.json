@@ -2,7 +2,7 @@
   "name": "Sama4",
   "short_name": "Sama4",
   "description": "Tired of being like Joey, instead of buying an expensive Enclyopedia just use this news Website",
- "start_url": "/",
+ "start_url": "https://suryakant01.github.io/Sama4/",
   "display": "standalone",
   "background_color": "white",
   "theme_color": "grey",
