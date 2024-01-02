@@ -52,7 +52,7 @@ async function showNews() {
   }
 } 
 showNews();
-//vikas 
+//Test
 
 // document.getElementsByClassName("submitButton")[0].addEventListener("click", function() {
 
