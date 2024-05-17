@@ -18,7 +18,7 @@ Sama4 is a dynamic news website designed to keep users informed with the latest 
 
 ## Demo
 
-Check out the live demo: [Sama4 Demo](https://suryakant01.github.io/Sama4/)
+Check out the live demo: [Sama4](https://suryakant01.github.io/Sama4/)
 
 ## Features
 
